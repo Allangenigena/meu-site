@@ -465,9 +465,20 @@ body {
   <p>© 2025 AM Engenharia. Todos os direitos reservados.</p>
 </footer>
   </a>
+<script>
+  const menuLinks = document.querySelectorAll('.quick-menu a');
+  const menuToggle = document.getElementById('menu-toggle');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.checked = false;
+    });
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
