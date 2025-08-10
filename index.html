@@ -165,8 +165,15 @@ ul, ol, li {
         width: 100%;
       }
     }
-    
-    .quick-menu {
+/* Remove margin/padding padrão do body para evitar espaçamento branco */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Menu fixo desktop */
+.quick-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -176,7 +183,7 @@ ul, ol, li {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: max-height 0.3s ease;
-  max-height: 100vh; /* desktop: mostra todo o menu */
+  max-height: 100vh;
   overflow: hidden;
 }
 
@@ -189,53 +196,74 @@ ul, ol, li {
   list-style: none;
 }
 
-/* Menu ícone (hamburguer) */
+.quick-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.quick-menu ul li a:hover {
+  color: #25d366;
+}
+
+/* Ícone hambúrguer */
 .menu-icon {
   display: none;
   position: fixed;
-  top: 10px;
-  right: 15px;
-  font-size: 2rem;
+  top: 0;
+  right: 0;
+  font-size: 2.5rem;
   color: white;
   background-color: #084d6e;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
   cursor: pointer;
   z-index: 1100;
+  user-select: none;
+  line-height: 1;
+  border-bottom-left-radius: 8px;
+  box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Responsividade para mobile */
+/* Espaço para o conteúdo não ficar atrás do menu */
+body {
+  padding-top: 50px;
+}
+
+/* Estilos para mobile */
 @media (max-width: 600px) {
   body {
-    padding-top: 50px; /* espaço para a caixinha */
+    padding-top: 40px; /* ajuste a altura conforme o menu minimalista */
   }
 
-  /* Esconde o menu completo inicialmente */
   .quick-menu {
     max-height: 0;
     padding: 0 1rem;
   }
+
   .quick-menu ul {
     flex-direction: column;
     gap: 1rem;
   }
+
   .quick-menu ul li a {
     font-size: 1.2rem;
     padding: 0.5rem 0;
     display: block;
   }
 
-  /* Mostra o botão hamburguer */
   .menu-icon {
     display: block;
   }
 
-  /* Quando checkbox marcado, mostra menu */
+  /* Quando o checkbox estiver marcado, exibe o menu */
   #menu-toggle:checked + .menu-icon + .quick-menu {
-    max-height: 300px; /* altura do menu aberto */
+    max-height: 300px;
     padding: 0.5rem 1rem;
   }
 }
+
 
 
 /* Evita que o conteúdo fique atrás do menu fixo */
@@ -338,8 +366,9 @@ body {
 </head>
 
 <body>
-  <input type="checkbox" id="menu-toggle" hidden>
-<label for="menu-toggle" class="menu-icon">&#9776;</label>
+<!-- Toggle para menu -->
+<input type="checkbox" id="menu-toggle" hidden>
+<label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">&#9776;</label>
 
 <nav class="quick-menu">
   <ul>
@@ -349,6 +378,7 @@ body {
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
+
   <header>
   <img src="logo.png" alt="Logo da AM Engenharia" width="200">
   <h1>AM Engenharia</h1>
@@ -438,6 +468,7 @@ body {
 
 </body>
 </html>
+
 
 
 
