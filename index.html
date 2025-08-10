@@ -172,22 +172,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Menu fixo desktop */
-.quick-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #084d6e;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: max-height 0.3s ease;
-  max-height: 100vh;
-  overflow: hidden;
-}
-
-/* Menu fixo no topo */
 .quick-menu {
   position: fixed;
   top: 0;
@@ -198,7 +182,7 @@ body {
   z-index: 1000;
 }
 
-/* Lista horizontal no desktop */
+/* Lista horizontal */
 .quick-menu ul {
   list-style: none;
   margin: 0;
@@ -227,23 +211,21 @@ body {
   outline: none;
 }
 
-/* Responsividade: menu vertical no mobile */
+/* Espaço para o conteúdo não ficar atrás do menu no desktop */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 50px; /* altura do menu fixo */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Esconde o menu completamente no mobile (abaixo de 600px) */
 @media (max-width: 600px) {
+  .quick-menu {
+    display: none;
+  }
   body {
-    padding-top: 220px; /* altura ajustada para menu vertical maior */
-  }
-  .quick-menu ul {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
-    align-items: center;
-  }
-  .quick-menu ul li a {
-    font-size: 1.3rem;
-    padding: 1rem 2rem;
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
+    padding-top: 0; /* remove padding-top no mobile, pois não tem menu */
   }
 }
 
@@ -461,6 +443,7 @@ body {
 
 </body>
 </html>
+
 
 
 
