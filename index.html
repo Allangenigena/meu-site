@@ -167,6 +167,7 @@ ul, ol, li {
     }
     
     /* CSS para o menu rápido fixo no topo */
+    
 .quick-menu {
   position: fixed;
   top: 0;
@@ -203,7 +204,24 @@ ul, ol, li {
 body {
   padding-top: 50px; /* ajuste se mudar altura do menu */
 }
+/* Altura do menu fixo */
+:root {
+  --menu-height: 50px;
+}
 
+/* Espaço extra para que a seção fique abaixo do menu fixo */
+#servicos,
+#orientacao,
+#por-que,
+#contato {
+  scroll-margin-top: var(--menu-height);
+  /* Ou a técnica abaixo, caso scroll-margin-top não funcione bem */
+  /*
+  position: relative;
+  padding-top: var(--menu-height);
+  margin-top: calc(var(--menu-height) * -1);
+  */
+}
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17460081172">
@@ -358,6 +376,7 @@ body {
 
 </body>
 </html>
+
 
 
 
