@@ -165,6 +165,45 @@ ul, ol, li {
         width: 100%;
       }
     }
+    
+    /* CSS para o menu rápido fixo no topo */
+.quick-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #084d6e;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.quick-menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.quick-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.quick-menu ul li a:hover {
+  color: #25d366;
+}
+
+/* Evita que o conteúdo fique atrás do menu fixo */
+body {
+  padding-top: 50px; /* ajuste se mudar altura do menu */
+}
+
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17460081172">
@@ -234,7 +273,15 @@ ul, ol, li {
   <img src="logo.png" alt="Logo da AM Engenharia" width="200">
   <h1>AM Engenharia</h1>
     <p>Especialistas em legalizações e soluções técnicas para imóveis em <strong>Sorocaba</strong></p>
-  
+  <!-- 2. Menu rápido fixo no topo -->
+<nav class="quick-menu">
+  <ul>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#orientacao">Orientação</a></li>
+    <li><a href="#por-que">Por que escolher?</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
   </header>
 
   <div class="container">
@@ -247,7 +294,7 @@ ul, ol, li {
      <a href="https://wa.me/5515991273247" class="cta-button">Fale agora com um engenheiro</a>
     </div>
 
-    <div class="section">
+    <div id="servicos" class="section">
       <h2>Serviços Oferecidos</h2>
       <div class="services">
         <div class="service-box">
@@ -272,13 +319,13 @@ ul, ol, li {
       </div>
     </div>
 
-    <div class="section">
+    <div id="orientacao" class="section">
       <h2>Orientação Técnica Especializada</h2>
       <p>Se você não sabe o que precisa fazer, estamos aqui para te orientar. Nossa equipe oferece um atendimento direto com um
          engenheiro e que te dará todas as orientações necessárias para resolver seu problema.</p>
     </div>
 
-    <div class="section">
+    <div id="por-que" class="section">
       <h2>Por que escolher a AM Engenharia?</h2>
       <ul>
         <li>✔ Acesso direto a um engenheiro via WhatsApp, sem intermediários</li>
@@ -294,7 +341,7 @@ ul, ol, li {
     </div>
   </div>
 
-  <footer>
+  <footer id="contato">
   <p><strong>Contato:</strong></p>
   <p>WhatsApp: (15) 99127-3247</p>
   <p>Atendimento apenas em Sorocaba/SP</p>
@@ -307,20 +354,11 @@ ul, ol, li {
 
   <p>© 2025 AM Engenharia. Todos os direitos reservados.</p>
 </footer>
- 
-  <footer>
-    <p><strong>Contato:</strong></p>
-    <p>WhatsApp: (15) 99127-3247</p>
-    <p>Atendimento apenas em Sorocaba/SP</p>
-    <p>© 2025 AM Engenharia.</p> 
-    <p>Todos os direitos reservados.</p>
-  </footer>
-
-   
   </a>
 
 </body>
 </html>
+
 
 
 
