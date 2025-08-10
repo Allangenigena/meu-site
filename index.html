@@ -165,107 +165,6 @@ ul, ol, li {
         width: 100%;
       }
     }
-/* Remove margin/padding padrão do body para evitar espaçamento branco */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
-.quick-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #084d6e;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
-
-/* Lista horizontal */
-.quick-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-/* Links do menu */
-.quick-menu ul li a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 4px;
-}
-
-.quick-menu ul li a:hover,
-.quick-menu ul li a:focus {
-  background-color: #25d366;
-  color: #084d6e;
-  outline: none;
-}
-
-/* Espaço para o conteúdo não ficar atrás do menu no desktop */
-body {
-  margin: 0;
-  padding: 0;
-  padding-top: 50px; /* altura do menu fixo */
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Esconde o menu completamente no mobile (abaixo de 600px) */
-@media (max-width: 600px) {
-  .quick-menu {
-    display: none;
-  }
-  body {
-    padding-top: 0; /* remove padding-top no mobile, pois não tem menu */
-  }
-}
-
-
-
-/* Evita que o conteúdo fique atrás do menu fixo */
-body {
-  padding-top: 50px; /* ajuste se mudar altura do menu */
-}
-/* Altura do menu fixo */
-:root {
-  --menu-height: 50px;
-}
-
-/* Espaço extra para que a seção fique abaixo do menu fixo */
-#servicos,
-#orientacao,
-#por-que,
-#contato {
-  scroll-margin-top: var(--menu-height);
-  /* Ou a técnica abaixo, caso scroll-margin-top não funcione bem */
-  /*
-  position: relative;
-  padding-top: var(--menu-height);
-  margin-top: calc(var(--menu-height) * -1);
-  */
-}
-    @media (max-width: 600px) {
-  .quick-menu ul {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.5rem 0;
-  }
-  .quick-menu ul li a {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    display: block;
-  }
-}
-
   </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17460081172">
@@ -331,19 +230,6 @@ body {
 </head>
 
 <body>
-<!-- Toggle para menu -->
-<input type="checkbox" id="menu-toggle" hidden>
-<label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">&#9776;</label>
-
-<nav class="quick-menu">
-  <ul>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#orientacao">Orientação</a></li>
-    <li><a href="#por-que">Por que escolher?</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-</nav>
-
   <header>
   <img src="logo.png" alt="Logo da AM Engenharia" width="200">
   <h1>AM Engenharia</h1>
@@ -430,19 +316,9 @@ body {
   <p>© 2025 AM Engenharia. Todos os direitos reservados.</p>
 </footer>
   </a>
-<script>
-  const menuLinks = document.querySelectorAll('.quick-menu a');
-  const menuToggle = document.getElementById('menu-toggle');
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.checked = false;
-    });
-  });
-</script>
-
 </body>
 </html>
+
 
 
 
