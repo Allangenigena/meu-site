@@ -176,7 +176,7 @@ ul, ol, li {
 
   gtag('config', 'AW-17460081172');
 </script>
-  <!-- ==== Ícones fixos no canto ==== -->
+<!-- ==== Ícones fixos no canto ==== -->
 <style>
 .fixed-icons {
   position: fixed;
@@ -184,9 +184,10 @@ ul, ol, li {
   right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* espaço entre os ícones */
   z-index: 999;
 }
+
 .fixed-icons a {
   width: 50px;
   height: 50px;
@@ -201,28 +202,31 @@ ul, ol, li {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   transition: transform 0.2s ease;
 }
-  .fixed-icons a.img {
-  display: block;   /* elimina espaço em branco abaixo da imagem */
-  width: 24px;
-  height: 24px;
-}
+
 .fixed-icons a:hover {
   transform: scale(1.1);
 }
+
 .fixed-icons a.instagram {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+/* Ajuste nas imagens para evitar espaçamento indesejado */
+.fixed-icons a img {
+  display: block; /* remove espaçamento embaixo da imagem */
+  width: 24px;    /* tamanho fixo para as imagens */
+  height: 24px;
 }
 </style>
 
 <div class="fixed-icons">
-     <a href="https://wa.me/+55991273247" target="_blank" class="whatsapp-float">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" alt="WhatsApp">
-     </a>
+  <a href="https://wa.me/+55991273247" target="_blank" class="whatsapp-float" title="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
   <a href="https://instagram.com/amengenhariasorocaba" target="_blank" class="instagram" title="Siga no Instagram">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" width="20" alt="instagram">  
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">  
   </a>
 </div>
-
 </head>
 
 <body>
@@ -304,6 +308,7 @@ ul, ol, li {
 
 </body>
 </html>
+
 
 
 
