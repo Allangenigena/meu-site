@@ -187,80 +187,63 @@ body {
   overflow: hidden;
 }
 
+/* Menu fixo no topo */
+.quick-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #084d6e;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Lista horizontal no desktop */
 .quick-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
+/* Links do menu */
 .quick-menu ul li a {
+  display: block;
+  padding: 0.75rem 1rem;
   color: white;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
 }
 
-.quick-menu ul li a:hover {
-  color: #25d366;
+.quick-menu ul li a:hover,
+.quick-menu ul li a:focus {
+  background-color: #25d366;
+  color: #084d6e;
+  outline: none;
 }
 
-/* Ícone hambúrguer */
-.menu-icon {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  font-size: 2.5rem;
-  color: white;
-  background-color: #084d6e;
-  padding: 0.25rem 0.75rem;
-  cursor: pointer;
-  z-index: 1100;
-  user-select: none;
-  line-height: 1;
-  border-bottom-left-radius: 8px;
-  box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
-}
-
-/* Espaço para o conteúdo não ficar atrás do menu */
-body {
-  padding-top: 50px;
-}
-
-/* Estilos para mobile */
+/* Responsividade: menu vertical no mobile */
 @media (max-width: 600px) {
   body {
-    padding-top: 40px; /* ajuste a altura conforme o menu minimalista */
+    padding-top: 220px; /* altura ajustada para menu vertical maior */
   }
-
-  .quick-menu {
-    max-height: 0;
-    padding: 0 1rem;
-  }
-
   .quick-menu ul {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem 0;
+    align-items: center;
   }
-
   .quick-menu ul li a {
-    font-size: 1.2rem;
-    padding: 0.5rem 0;
-    display: block;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  /* Quando o checkbox estiver marcado, exibe o menu */
-  #menu-toggle:checked + .menu-icon + .quick-menu {
-    max-height: 300px;
-    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 }
 
@@ -478,6 +461,7 @@ body {
 
 </body>
 </html>
+
 
 
 
